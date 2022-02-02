@@ -3,11 +3,13 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 import { Add, Remove } from "@material-ui/icons";
+import { phone } from "../responsive";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
+  ${phone({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -20,6 +22,7 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  ${phone({ padding: "10px" })}
 `;
 
 const TopButton = styled.button`
@@ -32,7 +35,9 @@ const TopButton = styled.button`
   color: ${(props) => props.type === "filled" && "white"};
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  ${phone({ display: "none" })}
+`;
 const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
@@ -42,6 +47,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${phone({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
@@ -52,6 +58,7 @@ const Product = styled.div`
   padding: 2px 0;
   display: flex;
   justify-content: space-between;
+  ${phone({ flexDirection: "column" })}
 `;
 
 const ProductDetail = styled.div`
@@ -69,6 +76,7 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  ${phone({ padding: "12px" })}
 `;
 
 const ProductName = styled.span``;
@@ -97,10 +105,12 @@ const ProductAmountContainer = styled.div`
 const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
+  ${phone({ margin: "5px 15px" })}
 `;
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
+  ${phone({ marginBottom: "20px " })}
 `;
 
 const Hr = styled.hr`

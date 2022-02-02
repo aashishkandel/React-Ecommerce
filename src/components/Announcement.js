@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { phone } from "../responsive";
 
 const Container = styled.div`
   height: 30px;
@@ -9,6 +10,7 @@ const Container = styled.div`
   align-items: center;
   font-size: 14px;
   font-weight: 500;
+  ${phone({ fontSize: "13px" })}
 `;
 
 const Announcement = () => {

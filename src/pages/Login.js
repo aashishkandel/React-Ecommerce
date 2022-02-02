@@ -1,10 +1,10 @@
 /**
  * TODO:
- * responsive design
  * login logic
  */
 
 import styled from "styled-components";
+import { phone } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
+  ${phone({ width: "75%" })}
 `;
 
 const Title = styled.h1`

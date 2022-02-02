@@ -1,6 +1,5 @@
 /**
  * TODO:
- * responsive design
  * fetch data from database
  */
 
@@ -10,12 +9,14 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 import { Add, Remove } from "@material-ui/icons";
+import { phone } from "../responsive";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  ${phone({ flexDirection: "column", padding: "10px" })}
 `;
 
 const ImageContainer = styled.div`
@@ -26,11 +27,13 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  ${phone({ height: "40vh" })}
 `;
 
 const InfoConatiner = styled.div`
   flex: 1;
   padding: 0px 50px;
+  ${phone({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -51,6 +54,7 @@ const FilterContainer = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
+  ${phone({ width: "100%" })}
 `;
 
 const Filter = styled.div`
@@ -84,6 +88,7 @@ const AddConatiner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  ${phone({ width: "100%" })}
 `;
 
 const AmountConatiner = styled.div`
