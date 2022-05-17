@@ -27,16 +27,19 @@ export const categories = [
     id: 1,
     img: "https://i.ibb.co/7zvyYZc/5ef27b49988ee34e43460cf4.jpg",
     title: "SHIRT STYLE",
+    category: "men",
   },
   {
     id: 2,
     img: "https://i.ibb.co/WkXNHrm/longuewearstyle.jpg",
     title: "LOUNGEWEAR STYLE",
+    category: "women",
   },
   {
     id: 3,
     img: "https://i.ibb.co/MS9YYS3/lightjacket.jpg",
     title: "LIGHT JACKETS",
+    category: "jens",
   },
 ];
 

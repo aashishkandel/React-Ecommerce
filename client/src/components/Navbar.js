@@ -8,6 +8,8 @@ import React from "react";
 import styled from "styled-components";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { Badge } from "@material-ui/core";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { phone } from "../responsive";
 
 const Container = styled.div`
@@ -72,9 +74,14 @@ const MenuItem = styled.div`
   cursor: pointer;
   margin-left: 25px;
   ${phone({ fontSize: "12px", marginLeft: "10px" })}
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Navbar = () => {
+  const quantity = useSelector((state) => state.cart.quantity);
+
   return (
     <Container>
       <Wrapper>
@@ -86,16 +93,22 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>AASHISH</Logo>
+          <Logo>TexasClothing</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
+            <Link to="/register">REGISTER </Link>
           </MenuItem>
+          <MenuItem>
+            <Link to="/login">SIGN IN </Link>
+          </MenuItem>
+          <Link to="/cart">
+            <MenuItem>
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlined />
+              </Badge>
+            </MenuItem>
+          </Link>
         </Right>
       </Wrapper>
     </Container>
