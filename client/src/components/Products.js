@@ -22,14 +22,16 @@ const Products = ({ category, filters, sort }) => {
 
   useEffect(() => {
     const getProducts = async () => {
-      try {
-        const res = await axios.get(
-          category
-            ? `http://localhost:5000/api/products?category=${category}`
-            : "http://localhost:5000/api/products"
-        );
-        setProducts(res.data);
-      } catch (err) {}
+      //disabled for demo branch
+      // try {
+      //   const res = await axios.get(
+      //     category
+      //       ? `http://localhost:5000/api/products?category=${category}`
+      //       : "http://localhost:5000/api/products"
+      //   );
+      //   setProducts(res.data);
+      // } catch (err) {}
+      setProducts(popularProducts);
     };
     getProducts();
   }, [category]);

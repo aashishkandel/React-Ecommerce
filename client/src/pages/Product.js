@@ -15,6 +15,7 @@ import { publicRequest } from "../requestHelper";
 import { useDispatch } from "react-redux";
 import { phone } from "../responsive";
 import { addProduct } from "../redux/cartRedux";
+import { popularProducts } from "../data";
 
 const Container = styled.div``;
 
@@ -136,10 +137,12 @@ const Product = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getProduct = async () => {
+    const getProduct = () => {
       try {
-        const res = await publicRequest.get("/products/find/" + id);
-        setProduct(res.data);
+        //disabled for demo-branch
+        // const res = await publicRequest.get("/products/find/" + id);
+        // setProduct(res.data);
+        setProduct(popularProducts.find((entry) => entry._id === id));
       } catch (err) {}
     };
     getProduct();
